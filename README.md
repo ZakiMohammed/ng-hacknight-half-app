@@ -1,27 +1,63 @@
-# NgHacknightApp
+# Assignment: HacKnight - React Getting Started
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+React HacKnight app getting started.
 
-## Development server
+![](https://raw.githubusercontent.com/ZakiMohammed/react-hacknight-half-app/master/banner.png)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Problem Statement
 
-## Code scaffolding
+A client has a requirement to create a HacKnight App which will allow participants to register them selves in an upcoming Hackathon event. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The app will show the details of HacKnight in the home page. The app will also have a registration form where participants can register. Once filled the form the participants can see their name in the participants list page. The app will also come up with About and FAQ page. In case of any random route user will navigated to not found page. 
 
-## Build
+For the backend consider using json-server.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+**Pages:**
 
-## Running unit tests
+- Home (Banner)
+- Register
+	- Full Name
+	- Email
+	- Country
+	- GitHub Link
+- Participants
+- About
+- Not Found
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+**Acceptance Criteria:**
 
-## Running end-to-end tests
+- Complete the registration form
+- Show the participants listing once registered on the participants page
+- Show registration count and countries participants are from on the home page cards
+- Navigate to about page from footer's button click
+- Add environment files to the projects
+- Create GitHub repository and share the project once completed
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+**NFR (Non Functional Requirements):**
 
-## Further help
+- Show appropriate error messages
+- Show loader where ever required
+- Provide error handling support
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Run Application
+```
+npm start
+```
+
+## Initial Setup
+
+```
+ng g new hacknight-app --standalone=false
+? Which stylesheet format would you like to use? Sass (SCSS)
+? Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? no
+```
+
+## Add Dependencies
+
+```
+npm i bootstrap
+npm i bootstrap-icons
+npm i bootswatch
+
+npm i uuid
+```
