@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
+  fullName: string = '';
+
   onSubmit(event: Event) {
     event.preventDefault();
     console.log('onSubmit');
