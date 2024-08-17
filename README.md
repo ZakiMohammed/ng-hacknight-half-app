@@ -1,6 +1,6 @@
-# Assignment: HacKnight - React Getting Started
+# Assignment: HacKnight - Angular Getting Started
 
-React HacKnight app getting started.
+Angular HacKnight app getting started.
 
 ![](https://raw.githubusercontent.com/ZakiMohammed/react-hacknight-half-app/master/banner.png)
 
@@ -48,6 +48,7 @@ npm start
 
 ```
 ng g new hacknight-app --standalone=false
+
 ? Which stylesheet format would you like to use? Sass (SCSS)
 ? Do you want to enable Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)? no
 ```
