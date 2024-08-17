@@ -61,4 +61,5 @@ npm i bootstrap-icons
 npm i bootswatch
 
 npm i uuid
+npm i @types/uuid -D
 ```
