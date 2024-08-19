@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Participant } from '../../models/participant.model';
+import { ParticipantService } from '../../services/participant.service';
 
 @Component({
   selector: 'app-list',
@@ -8,4 +9,13 @@ import { Participant } from '../../models/participant.model';
 })
 export class ListComponent {
   participants: Participant[] = [];
+
+  constructor(private participantService: ParticipantService) {}
+
+  ngOnInit() {
+    
+    this.participants = this.participantService.getParticipants();
+    console.log(this.participants);
+  }
+  
 }

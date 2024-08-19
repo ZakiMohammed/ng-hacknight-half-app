@@ -1,3 +1,9 @@
-<div *ngFor="let participant of participants.reverse()">
-  <app-item [participant]="participant"></app-item>
+<div *ngIf="participants.length > 0">
+  <div *ngFor="let participant of participants.reverse()" class="participant-item border-bottom p-3 mb-2">
+    <p><strong>Name:</strong> {{ participant.fullName }}</p>
+    <p><strong>Country:</strong> {{ participant.country }}</p>
+    <p><strong>GitHub Link:</strong> <a [href]="participant.gitHubLink" target="_blank">{{ participant.gitHubLink }}</a></p>
+  </div>
 </div>
+
+
