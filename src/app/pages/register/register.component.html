@@ -12,18 +12,21 @@
       class="form-control mb-2"
       placeholder="Email"
       name="email"
+      [(ngModel)]="email"
     />
     <input
       type="text"
       class="form-control mb-2"
       placeholder="Country"
       name="country"
+      [(ngModel)]="country"
     />
     <input
       type="text"
       class="form-control mb-2"
       placeholder="GitHub"
       name="github"
+      [(ngModel)]="github"
     />
   </div>
   <button class="btn btn-danger me-2" type="submit" (click)="onSubmit($event)">
