@@ -16,6 +16,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ParticipantsComponent } from './pages/participants/participants.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
+import { FaqComponent } from './pages/faq/faq.component';
 
 @NgModule({
   declarations: [
@@ -31,14 +33,15 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     NotFoundComponent,
     ParticipantsComponent,
-    RegisterComponent
+    RegisterComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
