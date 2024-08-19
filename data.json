@@ -41,6 +41,20 @@
       "email": "clark@mail.com",
       "country": "UAE",
       "gitHubLink": "https://github.com/clark-kent"
+    },
+    {
+      "id": "47a64ca4-1d06-4b09-b2aa-ad623dbda2d5",
+      "fullName": "Manasa V",
+      "email": "vmanasa@microsoft.com",
+      "country": "India",
+      "gitHubLink": "https://github.com/Manasa252"
+    },
+    {
+      "id": "c72581da-d6ab-4086-9480-9c9eca443392",
+      "fullName": "Manasa V",
+      "email": "vmanasa@microsoft.com",
+      "country": "India",
+      "gitHubLink": "https://github.com/Manasa252"
     }
   ]
 }
