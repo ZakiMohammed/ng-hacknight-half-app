@@ -1,0 +1,19 @@
+.participant-item {
+    background-color: #f9f9f9; /* Light background color for contrast */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+  }
+  
+  .participant-item p {
+    margin: 0; /* Remove default margin for p elements */
+  }
+  
+  .participant-item a {
+    color: #007bff; /* Bootstrap link color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .participant-item a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
