@@ -1,32 +1,39 @@
-<form>
+<form (ngSubmit)="onSubmit($event)">
   <div class="mb-3">
     <input
       type="text"
       class="form-control mb-2"
-      placeholder="Full Name"
+      placeholder="Full Name (letters and spaces only)"
       name="fullName"
       [(ngModel)]="fullName"
+      
     />
+
     <input
-      type="text"
+      type="email"
       class="form-control mb-2"
-      placeholder="Email"
+      placeholder="Email (e.g., example@domain.com)"
       name="email"
+      [(ngModel)]="email"
     />
+
     <input
       type="text"
       class="form-control mb-2"
-      placeholder="Country"
+      placeholder="Country (letters and spaces only)"
       name="country"
+      [(ngModel)]="country"
     />
+
     <input
       type="text"
       class="form-control mb-2"
-      placeholder="GitHub"
+      placeholder="GitHub (e.g., https://github.com/username)"
       name="github"
+      [(ngModel)]="github"
     />
   </div>
-  <button class="btn btn-danger me-2" type="submit" (click)="onSubmit($event)">
+  <button class="btn btn-danger me-2" type="submit">
     <i class="bi bi-door-open-fill"></i> Register
   </button>
   <button class="btn btn-dark" type="reset">
