@@ -17,6 +17,7 @@ import { ParticipantsComponent } from './pages/participants/participants.compone
 import { RegisterComponent } from './pages/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { FaqComponent } from './pages/faq/faq.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { FaqComponent } from './pages/faq/faq.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -69,7 +69,7 @@
         <i class="bi bi-person-hearts"></i>
       </h1>
       <h1 class="fw-bolder text-danger">
-        {{ participantCount }} Knights
+        <span>{{participants.length}}</span> Knights
       </h1>
       <p>Clock is ticking. Hurry up! </p>
     </div>
@@ -79,10 +79,18 @@
       <h1 class="display-1 fw-bolder text-danger">
         <i class="bi bi-globe-central-south-asia"></i>
       </h1>
+      
       <h1 class="fw-bolder text-danger">Global</h1>
       <p>
-        Participants from {{ uniqueCountryCount }} Countries.
+        Participants from 
+        <span *ngFor="let country of getUniqueCountries().countries; let i = index">
+          {{ country }}<span *ngIf="i < getUniqueCountries().countries.length - 1">, </span>
+        </span>
       </p>
+      <p>
+        Count: {{ getUniqueCountries().count }}
+      </p>
+      
     </div>
   </div>
 </div>

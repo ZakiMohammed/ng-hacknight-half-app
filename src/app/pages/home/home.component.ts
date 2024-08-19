@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ParticipantService } from '../../services/participant.service';
 import { Participant } from '../../models/participant.model';
+import { ParticipantService } from '../../services/participant.service';
 
 @Component({
   selector: 'app-home',
@@ -8,23 +8,33 @@ import { Participant } from '../../models/participant.model';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent implements OnInit {
-
-  participantCount: number = 0;
-  uniqueCountryCount: number = 0;
-
-  constructor(private participantService: ParticipantService) {}
-
+  // participants: Participant[] = [];
+ 
+  constructor(private participantService:ParticipantService){
+ 
+  };
+ 
+  get participants()
+  {
+    return this.participantService.participants;
+  }
+  set participants(value:Participant[])
+  {
+    this.participantService.participants=value;
+  }
+ 
   ngOnInit(): void {
-    const participants: Participant[] = this.participantService.getParticipants();
-    this.participantCount = participants.length;
-    console.log(this.participantCount);
-    this.uniqueCountryCount = this.countUniqueCountries(participants);
-    console.log(this.uniqueCountryCount);
+    this.participantService.getparticipants().subscribe({
+      next:(participant)=>this.participants=participant,
+      error:(error)=>alert(` Error occured: ${error.message}`),
+      complete:()=>console.log('completed')
+    } )
+    
   }
-
-  private countUniqueCountries(participants: Participant[]): number {
-    const countries = new Set(participants.map(p => p.country));
-    return countries.size;
+  getUniqueCountries(): { countries: string[], count: number } {
+    const countries = this.participants.map(participant => participant.country);
+    const uniqueCountries = [...new Set(countries)];
+    return { countries: uniqueCountries, count: uniqueCountries.length };
   }
-
+  
 }

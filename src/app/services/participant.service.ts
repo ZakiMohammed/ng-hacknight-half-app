@@ -1,27 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Participant } from '../models/participant.model';
-import { v4 as uuidv4 } from 'uuid'; 
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ParticipantService {
 
-  constructor() { }
+  participants: Participant[]= [];
+  apiUrl=environment.apiUrl+'participants'
 
-  private participants: Participant[] = [];
+  constructor(private http:HttpClient) { }
 
+  getparticipants(){
+    return this.http.get<Participant[]>(this.apiUrl);
+  }
+
+  removeParticipant(id: string){
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+
+  
   addParticipant(participant: Participant) {
-    participant.id = this.generateUniqueId();
-    this.participants.push(participant);
-    console.log("Registration Successful");
-  }
-
-  getParticipants(): Participant[] {
-    return this.participants;
-  }
-
-  private generateUniqueId(): string {
-    return uuidv4(); 
+    return this.http.post(this.apiUrl, participant);
   }
 }

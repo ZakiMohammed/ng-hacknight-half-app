@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ParticipantService } from '../../services/participant.service';
 import { Participant } from '../../models/participant.model';
+import { v4 as uuid } from 'uuid';
 import { LoaderService } from '../../services/loader.service';
 
 @Component({
@@ -14,8 +15,9 @@ export class RegisterComponent {
   country: string = '';
   github: string = '';
 
-  constructor(private participantService: ParticipantService,
-    private loaderService: LoaderService,
+  constructor(
+    private participantService: ParticipantService,
+    private loaderService: LoaderService
   ) {}
 
   onSubmit(event: Event) {
@@ -43,27 +45,32 @@ export class RegisterComponent {
 
     console.log(event);
 
-    const registrationDetails = {
-      id: '', 
+    const newParticipant: Participant = {
+      id: uuid(),
       fullName: this.fullName,
       email: this.email,
       country: this.country,
       gitHubLink: this.github
     };
 
-    
-    console.log('Registration Details:', registrationDetails);
+    this.loaderService.show();
+    this.participantService.addParticipant(newParticipant).subscribe({
+      next: () => this.participantService.participants.push(newParticipant),
+      error: (error) => alert(`Error Occurred: ${error.message}`),
+      complete: () => {
+        this.loaderService.hide();
+        alert("Registration successful");
+        this.fullName = '';
+        this.email = '';
+        this.country = '';
+        this.github = '';
+      },
+    });
 
     
-    this.loaderService.show(); // Show the loader
 
-    setTimeout(() => {
-      this.participantService.addParticipant(registrationDetails);
-      this.resetForm();
-      this.loaderService.hide(); // Hide the loader after the delay
-    }, 2000); // Adjust the delay as needed
   
-
+         
 
     this.resetForm();
   }
