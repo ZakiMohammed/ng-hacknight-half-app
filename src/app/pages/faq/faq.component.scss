@@ -1,0 +1,34 @@
+/* Center-align the content */
+.container {
+    text-align: center;
+  }
+  
+  /* Add spacing and padding to the accordion */
+  .accordion {
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+  }
+  
+  /* Style the accordion items */
+  .accordion-item {
+    margin-bottom: 15px;
+  }
+  
+  .accordion-button {
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .accordion-button:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .accordion-body {
+    padding: 15px;
+  }
