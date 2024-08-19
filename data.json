@@ -41,6 +41,13 @@
       "email": "clark@mail.com",
       "country": "UAE",
       "gitHubLink": "https://github.com/clark-kent"
+    },
+    {
+      "id": "502511a8-52b2-4c15-8f57-ea636b5a4912",
+      "fullName": "Harsh Maganur",
+      "email": "maganurharsh@microsoft.com",
+      "country": "India",
+      "gitHubLink": "https://github.com/Manasa252"
     }
   ]
 }

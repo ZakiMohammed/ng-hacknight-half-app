@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output} from '@angular/core';
 import { Participant } from '../../models/participant.model';
 
 @Component({
@@ -8,4 +8,5 @@ import { Participant } from '../../models/participant.model';
 })
 export class ItemComponent {
   @Input({ required: true }) participant!: Participant;
+
 }
